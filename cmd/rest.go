@@ -46,8 +46,8 @@ func initRoutes(router *gin.Engine, services app.Services) {
 	router.GET("/book/:calendar_id/slots/:duration_minutes", calendarHandler.GetEventSlots)
 
 	availabilityHandler := rest.NewAvailabilityHandler(services.ScheduleService)
-	router.POST("/api/v1/availabilities/:user_id", availabilityHandler.SetAvailability)
-	router.GET("/api/v1/availabilities/:user_id", availabilityHandler.GetAvailability)
+	router.POST("/api/v1/availabilities", availabilityHandler.SetAvailability)
+	router.GET("/api/v1/availabilities/:calendar_id", availabilityHandler.GetAvailability)
 
 	eventHandler := rest.NewEventHandler(services.ScheduleService)
 	router.POST("/api/v1/events", eventHandler.CreateEvent)
