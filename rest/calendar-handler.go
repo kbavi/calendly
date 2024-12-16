@@ -77,8 +77,9 @@ func (h *CalendarHandler) Get(c *gin.Context) {
 	// get availability rules for the calendar
 	availability, err := h.scheduleService.GetAvailability(c.Request.Context(), calendarID)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
-		return
+		if err != gorm.ErrRecordNotFound {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "invalid calendar id"})
+		}
 	}
 
 	// get free intervals for the calendar between from and to
