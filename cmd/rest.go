@@ -29,6 +29,11 @@ func main() {
 }
 
 func initRoutes(router *gin.Engine, services app.Services) {
+
+	router.GET("/health", func(c *gin.Context) {
+		c.JSON(200, gin.H{"status": "ok"})
+	})
+
 	userHandler := rest.NewUserHandler(services.UserService)
 	router.POST("/api/v1/users", userHandler.Create)
 	router.GET("/api/v1/users/:id", userHandler.Get)
