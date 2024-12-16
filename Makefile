@@ -5,20 +5,40 @@ run: build
 	bin/rest
 
 docker-run:
-	docker-compose up db api -d --build
+	if [ "$(shell uname)" = "Darwin" ]; then \
+		docker-compose up db api -d --build; \
+	else \
+		docker compose up db api -d --build; \
+	fi
 
 docker-down:
-	docker-compose down
+	if [ "$(shell uname)" = "Darwin" ]; then \
+		docker-compose down; \
+	else \
+		docker compose down; \
+	fi
 
 docker-logs:
-	docker-compose logs -f
+	if [ "$(shell uname)" = "Darwin" ]; then \
+		docker-compose logs -f; \
+	else \
+		docker compose logs -f; \
+	fi
 
 # New commands for docker tests
 docker-test:
-	docker-compose run --rm test
+	if [ "$(shell uname)" = "Darwin" ]; then \
+		docker-compose run --rm test; \
+	else \
+		docker compose run --rm test; \
+	fi
 
 docker-test-build:
-	docker-compose build test
+	if [ "$(shell uname)" = "Darwin" ]; then \
+		docker-compose build test; \
+	else \
+		docker compose build test; \
+	fi
 
 # Run this to build and run tests in one command
 docker-integration-tests: docker-test-build docker-test
