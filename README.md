@@ -18,10 +18,105 @@ Due to the time constraints and the demonstrative nature of the system, the foll
 - CI/CD is not implemented.
 
 ## API Documentation
-[Postman Collection](./Calendly.postman_collection.json)
+Complete API Documentation is available in [Postman Collection](./Calendly.postman_collection.json)
+
+### Highlighted API Routes
+
+**Get Calendar**
+```sh
+GET /api/v1/calendars/{calendar_id}
+```
+- This route is used to get the calendar details.
+- supports filtering between time range.
+- It returns the
+  - availability rules
+  - events
+  - free intervals
+  - scheduling links (e.g. `/book/:calendar_id/slots/30-mins`)
+
+
+**Set Availability**
+```sh
+POST /api/v1/availabilities
+```
+
+This route is used to set the availability rules for a calendar. Currently, the route supports setting one or more blocks of availability for a day of the week.
+e.g:
+- Monday 9am to 1pm and 2pm to 5pm
+- Tuesday 10am to 12pm
+
+**Get Overlaps Between Calendars**
+```sh
+GET /api/v1/calendars/availabilities/overlap
+```
+- accepts list of calendar ids
+- accept time range to find overlaps between the calendars
+- accounts for events booked in the time range in one or more of the calendars
+- returns overlaps intervals - free time for all the participants
+
+**Booking URL**
+```sh
+GET /book/:calendar_id/slots/30-mins?from=2024-12-14T09:00&to=2024-12-21T18:00
+```
+- accepts calendar id
+- accepts slot duration
+- accepts time range to find free slots
+- returns free time intervals of duration in the given time range for the given calendar
+- accounts for events booked in the time range in the calendars and avoids double booking
 
 ## DB Schema
 ![DB Schema](https://github.com/user-attachments/assets/e8aaafe8-3110-4939-af95-37b301d4934f)
+
+### Models
+
+**UserModel**
+```go
+type UserModel struct {
+	ID    string
+	Email string
+	Name  string
+}
+```
+
+**AvailabilityModel**
+```go
+type AvailabilityModel struct {
+	ID         string
+	CalendarID string
+	Rules      string
+}
+```
+- `Rules` is a JSON encoded string column that stores the availability rules.
+- Rules are currently decoded and processed at the application layer as type `pkg.AvailabilityRule` inside [entities file](./pkg/entities.go).
+- Rule supports two types of availability rules:
+  - Day: e.g. Monday to Friday, 9am to 5pm
+  - Date: 2024-01-01, 10am to 12pm (business logic is not implemented for date based rules)
+
+**CalendarModel**
+```go
+type CalendarModel struct {
+	ID             string
+	UserID         string
+	AvailabilityID *string
+}
+```
+- `AvailabilityID` is a foreign key that references the `AvailabilityModel`.
+
+**EventModel**
+```go
+type EventModel struct {
+	ID          string
+	CalendarID  string
+	Title       string
+	Description *string
+	Start       time.Time
+	Ending      time.Time
+	Invitees    string // comma separated invitee emails
+}
+```
+- `Invitees` is a comma separated string column that stores the invitee emails.
+- `Start` and `Ending` are the start and end times of the event.
+- `CalendarID` is a foreign key that references the `CalendarModel`.
 
 ## Code Architecture
 ![code-architecture](https://github.com/user-attachments/assets/03c0b284-44e7-4a6c-9bd8-06b0adb55414)
