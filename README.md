@@ -199,3 +199,26 @@ calendly
         ├── up.sh                       # up script
         └── user_test.go                # user integration tests
 ```
+## Integration Tests
+Follow the [Setup and Installation Document](./Setup.md) to run the integration tests.
+
+- Runs test cases for the test suite 6.1 and 6.2 mentioned in the [PRD](./PRD.md).
+- Other test cases are not implemented.
+- Uses [Testify](https://pkg.go.dev/github.com/stretchr/testify) for assertions and mocks.
+
+## Further Improvements
+- Refactor scheduling logic to it's own package to enable versioning and independant testing.
+- Implement complete test cases mentioned in the [PRD](./PRD.md).
+- Implement authentication and authorization.
+- Implement basic UI to demo the system.
+- Handle graceful server shutdowns.
+- Handle scheduling edge-cases.
+- Handle unhappy paths in business logic.
+- Introduce robust error handling.
+- Implement logging and observability.
+- Implement CI/CD.
+- Add support for multiple timezones.
+- Add support for async notifications.
+- Add support for google and microsoft calendar integrations.
+- Add support for multiple calendars per user.
+- Add CI/CD pipeline.
