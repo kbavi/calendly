@@ -18,6 +18,8 @@ Due to the time constraints and the demonstrative nature of the system, the foll
 - CI/CD is not implemented.
 
 ## Code Architecture
+![code-architecture](https://github.com/user-attachments/assets/03c0b284-44e7-4a6c-9bd8-06b0adb55414)
+
 
 ### File Structure
 
