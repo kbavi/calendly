@@ -20,6 +20,9 @@ cd calendly
 go mod download
 ```
 
+## API Documentation
+[Postman Collection](./Calendly.postman_collection.json)
+
 ## Development Setup
 
 ### Docker Setup (Recommended)

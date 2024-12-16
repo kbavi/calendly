@@ -1,0 +1,1209 @@
+{
+	"info": {
+		"_postman_id": "b384d50c-a989-4500-87a2-9b761f3d6b1f",
+		"name": "Calendly",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2815732"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"weekday@example.com\",\n    \"name\": \"Weekday\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201 Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"weekday@example.com\",\n    \"name\": \"Weekday\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 16 Dec 2024 07:26:51 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "83"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8f2cf291ac9b59fa-DEL"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "96f3f860-f319-4112"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"user\": {\n            \"id\": \"TbifvN\",\n            \"email\": \"weekday@example.com\",\n            \"name\": \"Weekday\"\n        }\n    }\n}"
+				},
+				{
+					"name": "400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Weekday\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 16 Dec 2024 07:27:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "91"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8f2cf36f0d2e59fa-DEL"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "64aee8cb-df75-4458"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Key: 'CreateUserInput.Email' Error:Field validation for 'Email' failed on the 'required' tag\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Calendar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"TbifvN\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/calendars",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"calendars"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"TbifvN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/calendars",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"calendars"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 16 Dec 2024 07:28:20 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "97"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8f2cf4bd8f6a59fa-DEL"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "bee2e45d-e30a-476c"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"calendar\": {\n            \"id\": \"LwTdwY\",\n            \"user\": {\n                \"id\": \"TbifvN\",\n                \"email\": \"weekday@example.com\",\n                \"name\": \"Weekday\"\n            }\n        }\n    }\n}"
+				},
+				{
+					"name": "400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"abc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/calendars",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"calendars"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 16 Dec 2024 07:28:46 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8f2cf55fac6759fa-DEL"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "b5707155-9887-405d"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"invalid user id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Set Availability",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"calendar_id\": \"cdMHKl\",\n    \"rules\": [\n        {\n            \"type\": \"day\",\n            \"day\": {\n                \"day\": 3,\n                \"intervals\": [\n                    {\n                        \"from\": \"10:00\",\n                        \"to\": \"18:00\"\n                    }\n                ]\n            }\n        },\n        {\n            \"type\": \"day\",\n            \"day\": {\n                \"day\": 4,\n                \"intervals\": [\n                    {\n                        \"from\": \"10:00\",\n                        \"to\": \"18:00\"\n                    }\n                ]\n            }\n        },\n        {\n            \"type\": \"day\",\n            \"day\": {\n                \"day\": 5,\n                \"intervals\": [\n                    {\n                        \"from\": \"10:00\",\n                        \"to\": \"18:00\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/availabilities",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"availabilities"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"calendar_id\": \"cdMHKl\",\n    \"rules\": [\n        {\n            \"type\": \"day\",\n            \"day\": {\n                \"day\": 3,\n                \"intervals\": [\n                    {\n                        \"from\": \"10:00\",\n                        \"to\": \"18:00\"\n                    }\n                ]\n            }\n        },\n        {\n            \"type\": \"day\",\n            \"day\": {\n                \"day\": 4,\n                \"intervals\": [\n                    {\n                        \"from\": \"10:00\",\n                        \"to\": \"18:00\"\n                    }\n                ]\n            }\n        },\n        {\n            \"type\": \"day\",\n            \"day\": {\n                \"day\": 5,\n                \"intervals\": [\n                    {\n                        \"from\": \"10:00\",\n                        \"to\": \"18:00\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/availabilities",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"availabilities"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Dec 2024 08:36:39 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "342"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"availability\": {\n            \"id\": \"HYXUSC\",\n            \"user\": {},\n            \"calendar\": {\n                \"id\": \"cdMHKl\",\n                \"user\": {}\n            },\n            \"rules\": [\n                {\n                    \"type\": \"day\",\n                    \"day\": {\n                        \"day\": 3,\n                        \"intervals\": [\n                            {\n                                \"from\": \"10:00\",\n                                \"to\": \"18:00\"\n                            }\n                        ]\n                    }\n                },\n                {\n                    \"type\": \"day\",\n                    \"day\": {\n                        \"day\": 4,\n                        \"intervals\": [\n                            {\n                                \"from\": \"10:00\",\n                                \"to\": \"18:00\"\n                            }\n                        ]\n                    }\n                },\n                {\n                    \"type\": \"day\",\n                    \"day\": {\n                        \"day\": 5,\n                        \"intervals\": [\n                            {\n                                \"from\": \"10:00\",\n                                \"to\": \"18:00\"\n                            }\n                        ]\n                    }\n                }\n            ]\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Availability",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"bAax0-\",\n    \"calendar_id\": \"0oAQGT\",\n    \"rules\": [\n        {\n            \"type\": \"day\",\n            \"day\": {\n                \"day\": 6,\n                \"intervals\": [\n                    {\n                        \"from\": \"10:00\",\n                        \"to\": \"11:00\"\n                    },\n                    {\n                        \"from\": \"13:00\",\n                        \"to\": \"17:00\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/availabilities/:user_id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"availabilities",
+						":user_id"
+					],
+					"variable": [
+						{
+							"key": "user_id",
+							"value": "LwTdwY"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"bAax0-\",\n    \"calendar_id\": \"0oAQGT\",\n    \"rules\": [\n        {\n            \"type\": \"day\",\n            \"day\": {\n                \"day\": 6,\n                \"intervals\": [\n                    {\n                        \"from\": \"10:00\",\n                        \"to\": \"11:00\"\n                    },\n                    {\n                        \"from\": \"13:00\",\n                        \"to\": \"17:00\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/availabilities/:user_id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"availabilities",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "LwTdwY"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Dec 2024 08:15:26 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "534"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"ID\": \"KxYtit\",\n    \"Calendar\": {\n        \"ID\": \"LwTdwY\",\n        \"User\": null,\n        \"Availability\": null\n    },\n    \"Rules\": [\n        {\n            \"type\": \"day\",\n            \"day\": {\n                \"day\": 0,\n                \"intervals\": [\n                    {\n                        \"from\": \"10:00\",\n                        \"to\": \"18:00\"\n                    }\n                ]\n            }\n        },\n        {\n            \"type\": \"day\",\n            \"day\": {\n                \"day\": 1,\n                \"intervals\": [\n                    {\n                        \"from\": \"10:00\",\n                        \"to\": \"18:00\"\n                    }\n                ]\n            }\n        },\n        {\n            \"type\": \"day\",\n            \"day\": {\n                \"day\": 2,\n                \"intervals\": [\n                    {\n                        \"from\": \"10:00\",\n                        \"to\": \"18:00\"\n                    }\n                ]\n            }\n        },\n        {\n            \"type\": \"day\",\n            \"day\": {\n                \"day\": 3,\n                \"intervals\": [\n                    {\n                        \"from\": \"10:00\",\n                        \"to\": \"18:00\"\n                    }\n                ]\n            }\n        },\n        {\n            \"type\": \"day\",\n            \"day\": {\n                \"day\": 4,\n                \"intervals\": [\n                    {\n                        \"from\": \"10:00\",\n                        \"to\": \"18:00\"\n                    }\n                ]\n            }\n        },\n        {\n            \"type\": \"day\",\n            \"day\": {\n                \"day\": 5,\n                \"intervals\": [\n                    {\n                        \"from\": \"10:00\",\n                        \"to\": \"18:00\"\n                    }\n                ]\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Calendar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/calendars/:id?from=2024-12-14T14:30:00Z&to=2024-12-16T14:30:00Z",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"calendars",
+						":id"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "2024-12-14T14:30:00Z",
+							"description": "time range start (type: timestamp in ISO format)"
+						},
+						{
+							"key": "to",
+							"value": "2024-12-16T14:30:00Z",
+							"description": "time range end (type: timestamp in ISO format)"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "LwTdwY"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/calendars/:id?from=2024-12-14T14:30:00Z&to=2024-12-16T14:30:00Z",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"calendars",
+								":id"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2024-12-14T14:30:00Z",
+									"description": "time range start (type: timestamp in ISO format)"
+								},
+								{
+									"key": "to",
+									"value": "2024-12-16T14:30:00Z",
+									"description": "time range end (type: timestamp in ISO format)"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "LwTdwY"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 16 Dec 2024 08:12:23 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "274"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8f2d354228e08ad3-DEL"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "b904113e-f2aa-4bf2"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"availability\": {\n            \"ID\": \"KxYtit\",\n            \"Calendar\": {\n                \"ID\": \"LwTdwY\",\n                \"User\": null,\n                \"Availability\": null\n            },\n            \"Rules\": [\n                {\n                    \"type\": \"day\",\n                    \"day\": {\n                        \"day\": 0,\n                        \"intervals\": [\n                            {\n                                \"from\": \"10:00\",\n                                \"to\": \"18:00\"\n                            }\n                        ]\n                    }\n                },\n                {\n                    \"type\": \"day\",\n                    \"day\": {\n                        \"day\": 1,\n                        \"intervals\": [\n                            {\n                                \"from\": \"10:00\",\n                                \"to\": \"18:00\"\n                            }\n                        ]\n                    }\n                },\n                {\n                    \"type\": \"day\",\n                    \"day\": {\n                        \"day\": 2,\n                        \"intervals\": [\n                            {\n                                \"from\": \"10:00\",\n                                \"to\": \"18:00\"\n                            }\n                        ]\n                    }\n                },\n                {\n                    \"type\": \"day\",\n                    \"day\": {\n                        \"day\": 3,\n                        \"intervals\": [\n                            {\n                                \"from\": \"10:00\",\n                                \"to\": \"18:00\"\n                            }\n                        ]\n                    }\n                },\n                {\n                    \"type\": \"day\",\n                    \"day\": {\n                        \"day\": 4,\n                        \"intervals\": [\n                            {\n                                \"from\": \"10:00\",\n                                \"to\": \"18:00\"\n                            }\n                        ]\n                    }\n                },\n                {\n                    \"type\": \"day\",\n                    \"day\": {\n                        \"day\": 5,\n                        \"intervals\": [\n                            {\n                                \"from\": \"10:00\",\n                                \"to\": \"18:00\"\n                            }\n                        ]\n                    }\n                }\n            ]\n        },\n        \"calendar_id\": \"LwTdwY\",\n        \"events\": [],\n        \"free_intervals\": [\n            [\n                \"2024-12-15T10:00:00Z\",\n                \"2024-12-15T18:00:00Z\"\n            ]\n        ],\n        \"scheduling_links\": {\n            \"15-mins\": \"/book/LwTdwY/slots/15-mins\",\n            \"30-mins\": \"/book/LwTdwY/slots/30-mins\",\n            \"60-mins\": \"/book/LwTdwY/slots/60-mins\"\n        }\n    },\n    \"status\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Event",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"TbifvN\",\n    \"calendar_id\": \"LwTdwY\",\n    \"title\": \"Test\",\n    \"invitees\": \"xyz@abc.com\",\n    \"start\": \"2024-12-15T09:00:00Z\",\n    \"end\": \"2024-12-15T10:00:00Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/events",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"events"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"TbifvN\",\n    \"calendar_id\": \"LwTdwY\",\n    \"title\": \"Test\",\n    \"invitees\": \"xyz@abc.com\",\n    \"start\": \"2024-12-15T09:00:00Z\",\n    \"end\": \"2024-12-15T10:00:00Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/events",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"events"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Dec 2024 08:16:12 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "209"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"event\": {\n            \"id\": \"QgrfTD\",\n            \"calendar\": {\n                \"id\": \"LwTdwY\",\n                \"user\": {}\n            },\n            \"title\": \"Test\",\n            \"description\": null,\n            \"invitees\": \"xyz@abc.com\",\n            \"start\": \"2024-12-15T09:00:00Z\",\n            \"end\": \"2024-12-15T10:00:00Z\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Event",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/events/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"events",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "QgrfTD"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/events/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"events",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "QgrfTD"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Dec 2024 08:16:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "209"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"event\": {\n            \"id\": \"QgrfTD\",\n            \"calendar\": {\n                \"id\": \"LwTdwY\",\n                \"user\": {}\n            },\n            \"title\": \"Test\",\n            \"description\": null,\n            \"invitees\": \"xyz@abc.com\",\n            \"start\": \"2024-12-15T09:00:00Z\",\n            \"end\": \"2024-12-15T10:00:00Z\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Query Events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/events?calendar_ids=LwTdwY&start=2024-12-14T14:30:00Z&end=2024-12-16T14:30:00Z",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"events"
+					],
+					"query": [
+						{
+							"key": "calendar_ids",
+							"value": "LwTdwY"
+						},
+						{
+							"key": "start",
+							"value": "2024-12-14T14:30:00Z"
+						},
+						{
+							"key": "end",
+							"value": "2024-12-16T14:30:00Z"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/events?calendar_ids=LwTdwY&start=2024-12-14T14:30:00Z&end=2024-12-16T14:30:00Z",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"events"
+							],
+							"query": [
+								{
+									"key": "calendar_ids",
+									"value": "LwTdwY"
+								},
+								{
+									"key": "start",
+									"value": "2024-12-14T14:30:00Z"
+								},
+								{
+									"key": "end",
+									"value": "2024-12-16T14:30:00Z"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Dec 2024 08:33:23 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "212"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"events\": [\n            {\n                \"id\": \"QgrfTD\",\n                \"calendar\": {\n                    \"id\": \"LwTdwY\",\n                    \"user\": {}\n                },\n                \"title\": \"Test\",\n                \"description\": null,\n                \"invitees\": \"xyz@abc.com\",\n                \"start\": \"2024-12-15T09:00:00Z\",\n                \"end\": \"2024-12-15T10:00:00Z\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Overlaps",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"calendar_ids\": [\"LwTdwY\", \"cdMHKl\"],\n    \"from\": \"2024-12-14T09:00:00Z\",\n    \"to\": \"2024-12-21T17:00:00Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/calendars/availabilities/overlap",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"calendars",
+						"availabilities",
+						"overlap"
+					],
+					"query": [
+						{
+							"key": "calendar_ids",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "from",
+							"value": "2006-01-02T15:04:05Z07:00",
+							"disabled": true
+						},
+						{
+							"key": "to",
+							"value": "2006-01-03T15:04:05Z07:00",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"calendar_ids\": [\"LwTdwY\", \"cdMHKl\"],\n    \"from\": \"2024-12-14T09:00:00Z\",\n    \"to\": \"2024-12-21T17:00:00Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/calendars/availabilities/overlap",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"calendars",
+								"availabilities",
+								"overlap"
+							],
+							"query": [
+								{
+									"key": "calendar_ids",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "from",
+									"value": "2006-01-02T15:04:05Z07:00",
+									"disabled": true
+								},
+								{
+									"key": "to",
+									"value": "2006-01-03T15:04:05Z07:00",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 16 Dec 2024 08:55:29 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "76"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8f2d74637807547a-DEL"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "ce383b7d-bf8d-471c"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        [\n            \"2024-12-18T10:00:00Z\",\n            \"2024-12-18T18:00:00Z\"\n        ],\n        [\n            \"2024-12-19T10:00:00Z\",\n            \"2024-12-19T18:00:00Z\"\n        ],\n        [\n            \"2024-12-20T10:00:00Z\",\n            \"2024-12-20T18:00:00Z\"\n        ]\n    ],\n    \"status\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Booking Slots",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/book/:calendar_id/slots/180-mins?from=2024-12-14T09:00:00Z&to=2024-12-21T18:00:00Z",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"book",
+						":calendar_id",
+						"slots",
+						"180-mins"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "2024-12-14T09:00:00Z"
+						},
+						{
+							"key": "to",
+							"value": "2024-12-21T18:00:00Z"
+						}
+					],
+					"variable": [
+						{
+							"key": "calendar_id",
+							"value": "LwTdwY"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/book/:calendar_id/slots/180-mins",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"book",
+								":calendar_id",
+								"slots",
+								"180-mins"
+							],
+							"variable": [
+								{
+									"key": "calendar_id",
+									"value": "LwTdwY"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Dec 2024 08:40:50 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "231"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"scheduling_link\": \"/book/LwTdwY/slots/180-mins\",\n        \"slots\": [\n            [\n                \"2024-12-16T10:00:00Z\",\n                \"2024-12-16T13:00:00Z\"\n            ],\n            [\n                \"2024-12-16T13:00:00Z\",\n                \"2024-12-16T16:00:00Z\"\n            ],\n            [\n                \"2024-12-16T16:00:00Z\",\n                \"2024-12-16T19:00:00Z\"\n            ]\n        ]\n    },\n    \"status\": \"success\"\n}"
+				},
+				{
+					"name": "200 with time range",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/book/:calendar_id/slots/180-mins?from=2024-12-14T09:00:00Z&to=2024-12-21T18:00:00Z",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"book",
+								":calendar_id",
+								"slots",
+								"180-mins"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2024-12-14T09:00:00Z"
+								},
+								{
+									"key": "to",
+									"value": "2024-12-21T18:00:00Z"
+								}
+							],
+							"variable": [
+								{
+									"key": "calendar_id",
+									"value": "LwTdwY"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Dec 2024 08:41:53 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "951"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"scheduling_link\": \"/book/LwTdwY/slots/180-mins\",\n        \"slots\": [\n            [\n                \"2024-12-20T10:00:00Z\",\n                \"2024-12-20T13:00:00Z\"\n            ],\n            [\n                \"2024-12-20T13:00:00Z\",\n                \"2024-12-20T16:00:00Z\"\n            ],\n            [\n                \"2024-12-20T16:00:00Z\",\n                \"2024-12-20T19:00:00Z\"\n            ],\n            [\n                \"2024-12-15T10:00:00Z\",\n                \"2024-12-15T13:00:00Z\"\n            ],\n            [\n                \"2024-12-15T13:00:00Z\",\n                \"2024-12-15T16:00:00Z\"\n            ],\n            [\n                \"2024-12-15T16:00:00Z\",\n                \"2024-12-15T19:00:00Z\"\n            ],\n            [\n                \"2024-12-16T10:00:00Z\",\n                \"2024-12-16T13:00:00Z\"\n            ],\n            [\n                \"2024-12-16T13:00:00Z\",\n                \"2024-12-16T16:00:00Z\"\n            ],\n            [\n                \"2024-12-16T16:00:00Z\",\n                \"2024-12-16T19:00:00Z\"\n            ],\n            [\n                \"2024-12-17T10:00:00Z\",\n                \"2024-12-17T13:00:00Z\"\n            ],\n            [\n                \"2024-12-17T13:00:00Z\",\n                \"2024-12-17T16:00:00Z\"\n            ],\n            [\n                \"2024-12-17T16:00:00Z\",\n                \"2024-12-17T19:00:00Z\"\n            ],\n            [\n                \"2024-12-18T10:00:00Z\",\n                \"2024-12-18T13:00:00Z\"\n            ],\n            [\n                \"2024-12-18T13:00:00Z\",\n                \"2024-12-18T16:00:00Z\"\n            ],\n            [\n                \"2024-12-18T16:00:00Z\",\n                \"2024-12-18T19:00:00Z\"\n            ],\n            [\n                \"2024-12-19T10:00:00Z\",\n                \"2024-12-19T13:00:00Z\"\n            ],\n            [\n                \"2024-12-19T13:00:00Z\",\n                \"2024-12-19T16:00:00Z\"\n            ],\n            [\n                \"2024-12-19T16:00:00Z\",\n                \"2024-12-19T19:00:00Z\"\n            ]\n        ]\n    },\n    \"status\": \"success\"\n}"
+				}
+			]
+		}
+	]
+}
