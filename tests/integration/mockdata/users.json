@@ -1,0 +1,160 @@
+{
+    "users": [
+        {
+            "name": "Weekday User",
+            "email": "weekday@example.com",
+            "availability": {
+                "rules": [
+                    {
+                        "type": "day",
+                        "day": {
+                            "day": 1,
+                            "intervals": [
+                                {
+                                    "from": "09:00",
+                                    "to": "17:00"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "day",
+                        "day": {
+                            "day": 2,
+                            "intervals": [
+                                {
+                                    "from": "09:00",
+                                    "to": "17:00"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "day",
+                        "day": {
+                            "day": 3,
+                            "intervals": [
+                                {
+                                    "from": "09:00",
+                                    "to": "17:00"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "day",
+                        "day": {
+                            "day": 4,
+                            "intervals": [
+                                {
+                                    "from": "09:00",
+                                    "to": "17:00"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "day",
+                        "day": {
+                            "day": 5,
+                            "intervals": [
+                                {
+                                    "from": "09:00",
+                                    "to": "17:00"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Midweek User",
+            "email": "midweek@example.com",
+            "availability": {
+                "rules": [
+                    {
+                        "type": "day",
+                        "day": {
+                            "day": 3,
+                            "intervals": [
+                                {
+                                    "from": "12:00",
+                                    "to": "17:00"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "day",
+                        "day": {
+                            "day": 4,
+                            "intervals": [
+                                {
+                                    "from": "12:00",
+                                    "to": "17:00"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "day",
+                        "day": {
+                            "day": 5,
+                            "intervals": [
+                                {
+                                    "from": "12:00",
+                                    "to": "17:00"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "day",
+                        "day": {
+                            "day": 6,
+                            "intervals": [
+                                {
+                                    "from": "12:00",
+                                    "to": "17:00"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Weekend User",
+            "email": "weekend@example.com",
+            "availability": {
+                "rules": [
+                    {
+                        "type": "day",
+                        "day": {
+                            "day": 6,
+                            "intervals": [
+                                {
+                                    "from": "09:00",
+                                    "to": "17:00"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "day",
+                        "day": {
+                            "day": 0,
+                            "intervals": [
+                                {
+                                    "from": "09:00",
+                                    "to": "17:00"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+} 

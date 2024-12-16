@@ -1,0 +1,61 @@
+{
+    "events": [
+        {
+            "userEmail": "weekday@example.com",
+            "events": [
+                {
+                    "title": "Weekly Team Meeting",
+                    "description": "Regular team sync-up",
+                    "start": "2024-12-18T10:00:00Z",
+                    "end": "2024-12-18T11:00:00Z",
+                    "invitees": "team@example.com"
+                },
+                {
+                    "title": "Project Review",
+                    "description": "Monthly project status review",
+                    "start": "2024-12-19T14:00:00Z",
+                    "end": "2024-12-19T15:30:00Z",
+                    "invitees": "stakeholders@example.com"
+                }
+            ]
+        },
+        {
+            "userEmail": "midweek@example.com",
+            "events": [
+                {
+                    "title": "Client Meeting",
+                    "description": "Product demo for client",
+                    "start": "2024-12-20T13:00:00Z",
+                    "end": "2024-12-20T14:00:00Z",
+                    "invitees": "client@example.com"
+                },
+                {
+                    "title": "Training Session",
+                    "description": "New feature training",
+                    "start": "2024-12-20T10:00:00Z",
+                    "end": "2024-12-20T12:00:00Z",
+                    "invitees": "team@example.com,trainees@example.com"
+                }
+            ]
+        },
+        {
+            "userEmail": "weekend@example.com",
+            "events": [
+                {
+                    "title": "Weekend Workshop",
+                    "description": "Technical workshop for community",
+                    "start": "2024-12-23T10:00:00Z",
+                    "end": "2024-12-23T16:00:00Z",
+                    "invitees": "community@example.com"
+                },
+                {
+                    "title": "Planning Session",
+                    "description": "Next quarter planning",
+                    "start": "2024-12-24T14:00:00Z",
+                    "end": "2024-12-24T16:00:00Z",
+                    "invitees": "management@example.com"
+                }
+            ]
+        }
+    ]
+}
