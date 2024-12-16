@@ -12,8 +12,15 @@ import (
 
 func main() {
 	os.Setenv("TZ", "UTC")
-	if err := godotenv.Load(); err != nil {
-		log.Fatalf("Warning: Error loading .env file: %v\n", err)
+	env := os.Getenv("ENV")
+	if env == "" {
+		env = "local"
+	}
+
+	if env == "local" {
+		if err := godotenv.Load(); err != nil {
+			log.Fatalf("Warning: Error loading .env file: %v\n", err)
+		}
 	}
 	app := app.NewApp()
 	router := gin.Default()
