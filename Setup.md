@@ -16,7 +16,7 @@ This document provides instructions for setting up, installing, and running the 
 git clone https://github.com/kbavi/calendly
 cd calendly
 ```
-2. Install dependancies
+2. Install dependancies [no required if using docker]
 ```sh
 go mod download
 ```
