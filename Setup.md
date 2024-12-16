@@ -27,6 +27,9 @@ go mod download
 This setup uses Docker Compose to run the application and integration tests. The docker compose file will also start a postgres database and run the application.
 
 1. Run integration tests
+
+**This command doesn't stream the test output to the console. The output from the tests will appear on the terminal after the tests are finished.**
+
 ```sh
 make docker-integration-tests
 ```
