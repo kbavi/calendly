@@ -17,6 +17,9 @@ Due to the time constraints and the demonstrative nature of the system, the foll
 - Few edge cases are ignored for the sake of brevity and keeping the system simple. E.g. if an event is booked across multiple days, for instance from 11pm to 1am, the system will not handle it correctly.
 - CI/CD is not implemented.
 
+## DB Schema
+![DB Schema](https://github.com/user-attachments/assets/e8aaafe8-3110-4939-af95-37b301d4934f)
+
 ## Code Architecture
 ![code-architecture](https://github.com/user-attachments/assets/03c0b284-44e7-4a6c-9bd8-06b0adb55414)
 This codebase provides a monolithic architecture with a single executable binary. The code on a high-level is divided into 3 layers:
