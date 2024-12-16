@@ -13,7 +13,8 @@ Due to the time constraints and the demonstrative nature of the system, the foll
 - UI is not implemented.
 - Robust input validation and error handling is not implemented. The current system focuses on getting the core functionalities working on their happy-paths.
 - Robust logging and observability is not implemented.
-- Mutliple timezones are not supported. All times are considered to be in UTC to avoid complexity.
+- Mutliple timezones are not supported at the backend. All times are considered to be in UTC to avoid complexity.
+  - Basic timezone handling can be implemented at the client side where every input is converted to UTC and the output is converted to the client's timezone.
 - Few edge cases are ignored for the sake of brevity and keeping the system simple. E.g. if an event is booked across multiple days, for instance from 11pm to 1am, the system will not handle it correctly.
 - CI/CD is not implemented.
 
@@ -217,7 +218,7 @@ Follow the [Setup and Installation Document](./Setup.md) to run the integration 
 - Introduce robust error handling.
 - Implement logging and observability.
 - Implement CI/CD.
-- Add support for multiple timezones.
+- Add support for native support for timezones.
 - Add support for async notifications.
 - Add support for google and microsoft calendar integrations.
 - Add support for multiple calendars per user.
