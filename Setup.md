@@ -44,6 +44,10 @@ make docker-build
 make docker-up
 ```
 3. The application is now running at http://localhost:8080
+4. Shutdown the application
+```sh
+make docker-down
+```
 
 ### Local Development
 
