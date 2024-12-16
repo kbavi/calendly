@@ -4,9 +4,10 @@ This document provides instructions for setting up, installing, and running the 
 
 ## Prerequisites
 
-- Go 1.x or higher
-- Docker and Docker Compose
-- Make (optional, but recommended)
+- GNU make
+- Go 1.22 or higher if running locally
+- Docker and Docker Compose if running via docker compose
+
 
 ## Installation
 
@@ -42,6 +43,7 @@ make docker-integration-tests
 make docker-build
 make docker-up
 ```
+3. The application is now running at http://localhost:8080
 
 ### Local Development
 
@@ -61,6 +63,7 @@ make integration-tests
 ```sh
 make run
 ```
+5. The application is now running at http://localhost:8080
 ## Additional Resources
 
 - [Project Documentation](./PRD.md)
