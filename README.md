@@ -119,7 +119,8 @@ type EventModel struct {
 - `CalendarID` is a foreign key that references the `CalendarModel`.
 
 ## Code Architecture
-![code-architecture](https://github.com/user-attachments/assets/03c0b284-44e7-4a6c-9bd8-06b0adb55414)
+![code-architecture](https://github.com/user-attachments/assets/3f95453c-f9b0-4310-83f0-9482534e5b46)
+
 This codebase provides a monolithic architecture with a single executable binary. The code on a high-level is divided into 3 layers:
 
 - **Presentation Layer**
